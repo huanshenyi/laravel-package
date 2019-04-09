@@ -73,6 +73,14 @@
         </nav>
 
         <main class="py-4">
+            @if(flash()->message)
+                <div class="alert {{ flash()->class }} alert-dismissible fade show " role="alert">
+                  <strong>{{ flash()->message }}</strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+            @endif
             @yield('content')
         </main>
     </div>
